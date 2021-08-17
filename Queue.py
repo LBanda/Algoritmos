@@ -1,14 +1,20 @@
-class Queue:
+class Queue(object):
     def __init__(self):
-        self.stack_1 = Stack()
-        self.stack_2 = Stack()
-def enqueue(self, item):
-        self.stack_1.push(item)
-def dequeue(self):
-        if not self.stack_1.is_empty():
-            while self.stack_1.size()> 0:
-                self.stack_2.push(self.stack_1.pop())
-            res = self.stack_2.pop()
-            while self.stack_2.size()>0:
-                self.stack_1.push(self.stack_2.pop())
-            return res
+        self.stack1 = []
+        self.stack2 = []
+
+    def Add(self,item):
+        self.stack1.append(item)
+    def Remove(self):
+        for i in range(len(self.stack1)):
+            self.stack2.append(self.stack1.pop())
+
+        return self.stack2.pop()
+
+r = Queue()
+r.Add(1)
+r.Add(15)
+r.Add(9)
+r.Add(99)
+r.Add(77)
+r.Remove()
